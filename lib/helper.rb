@@ -1,7 +1,7 @@
 module InputHelper
 
-  def conver(choice)
-    choice.to_i - 1
+  def converted(choice)
+    choice - 1
   end
 
   def valide_choice(input)
