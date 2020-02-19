@@ -7,7 +7,7 @@ module Menu
     puts 'Welcome to Archive music cli'
     puts 'Please enter a number from 1 to 3 to make a choice'
     puts '- 1 Display all musics'
-    puts '- 2 Display music by category'
+    puts '- 2 Search for a music'
     puts '- 3 Quit the app'
     make_first_choice
   end
@@ -24,7 +24,7 @@ module Menu
     if choice == 1
       all_music_menu
     elsif choice == 2
-      puts 'we will work on it'
+      display_search_result
     else
       quit
     end
@@ -47,7 +47,7 @@ module Menu
   def sub_menu
     puts 'Please enter a number from 1 to 3 to make a choice'
     puts '- 1 Display all musics'
-    puts '- 2 Display music by category'
+    puts '- 2 Searc for a music'
     puts '- 3 Quit the app'
     make_first_choice
   end
@@ -56,6 +56,14 @@ module Menu
     puts 'Here a the latest 10 music'
     puts 'Please enter a number from 1 to 10 to make a choice'
     Scraper.new.display_all
+    make_choice_after_all_music
+  end
+
+  def display_search_result
+    puts 'Enter a music to search'
+    param = gets.chomp
+    puts 'Search result for: ' + param
+    Scraper.new.search_result(param)
     make_choice_after_all_music
   end
 end
