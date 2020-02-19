@@ -16,6 +16,10 @@ class Music
     @@all
   end
 
+  def self.reset
+    @@all.clear
+  end
+
   def self.single_music(index)
     puts 'To go to the web page please CTRL + click on the music link'
     single = all[index]

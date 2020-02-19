@@ -52,8 +52,6 @@ module Menu
     make_first_choice
   end
 
-
-
   def all_music_menu
     puts 'Here a the latest 10 music'
     puts 'Please enter a number from 1 to 10 to make a choice'

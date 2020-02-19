@@ -5,6 +5,7 @@ require 'pry'
 class Scraper
   def grab_music
     # binding.pry
+    Music.reset
     Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').each do |m|
       m.css('.qt-item-content-s').css('h4').each do |i|
         title = i.text.lstrip.chop
