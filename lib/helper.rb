@@ -1,5 +1,4 @@
 module InputHelper
-
   def converted(choice)
     choice - 1
   end
