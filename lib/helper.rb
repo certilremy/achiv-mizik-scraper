@@ -1,4 +1,5 @@
-module MenuHelper
+module InputHelper
+
   def conver(choice)
     choice.to_i - 1
   end
@@ -18,4 +19,3 @@ module MenuHelper
     end
   end
 end
-
