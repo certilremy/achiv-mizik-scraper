@@ -19,7 +19,7 @@ class Scraper
     Music.reset
     Nokogiri::HTML(open('https://achivmizik.net/search?utf8=%E2%9C%93&q=' + param.to_s)).css('.qt-chart-tracklist').each do |r|
       r.css('li').each do |i|
-        title = i.text.lstrip.chop
+        title = i.css('h3').text.lstrip.chop
         link = 'https://achivmizik.net' + i.css('.qt-action').css('a').attribute('href').value.chomp
         Music.new(title, link)
       end
