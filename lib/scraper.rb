@@ -1,12 +1,14 @@
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 class Scraper
   def all_music
-    # looking for music
-    data = Nokogiri::HTML(open('https://achivmizik.net/musics/'))
-    puts data
+    Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').css('.row').each do |m|
+      title = m.css('.qt-item-content-s').css('h4').text
+      puts title
+    end
   end
 end
 
 v = Scraper.new
-puts v.all_music
+v.all_music
