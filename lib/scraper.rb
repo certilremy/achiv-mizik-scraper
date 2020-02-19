@@ -16,10 +16,15 @@ class Scraper
 
   def display_all
     grab_music
-    Music.all.each do |m|
-      puts m.title
-      puts m.link
+    Music.all.each_with_index do |m, index|
+      puts "#{index + 1} : #{m.title} "
     end
+  end
+
+  def single_music(music, index)
+    single = music.all[index]
+    puts single.tile
+    puts single.link
   end
 end
 
