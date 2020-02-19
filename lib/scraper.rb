@@ -7,7 +7,7 @@ class Scraper
     # binding.pry
     Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').each do |m|
       m.css('.qt-item-content-s').css('h4').each do |i|
-        title = i.text.chomp
+        title = i.text.lstrip.chop
         link = 'https://achivmizik.net' + i.css('a').attribute('href').value.chomp
         Music.new(title, link)
       end

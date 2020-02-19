@@ -4,7 +4,7 @@ class Music
 
   def initialize(title = nil, link = nil)
     @title = title
-    @link = link
+    @link = link 
     @@all << self
   end
 
