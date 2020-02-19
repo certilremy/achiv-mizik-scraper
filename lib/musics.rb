@@ -21,10 +21,11 @@ class Music
   end
 
   def self.single_music(index)
-    puts 'To go to the web page please CTRL + click on the music link'
+    puts ' '
     single = all[index]
     puts 'Title: ' + single.title
     puts 'Web link: ' + single.link
     puts ' '
+    puts 'To go to the web page please CTRL + click on the music link'
   end
 end

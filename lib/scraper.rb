@@ -15,7 +15,6 @@ class Scraper
   end
 
   def search(param)
-    # binding.pry
     Music.reset
     Nokogiri::HTML(open('https://achivmizik.net/search?utf8=%E2%9C%93&q=' + param.to_s)).css('.qt-chart-tracklist').each do |r|
       r.css('li').each do |i|
@@ -41,5 +40,3 @@ class Scraper
   end
 end
 
-# v = Scraper.new
-# v.grab_music
