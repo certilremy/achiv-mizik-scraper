@@ -4,9 +4,13 @@ require 'open-uri'
 require 'pry'
 class Scraper
   def grab_music
-    Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').css('.row').each do |m|
-      music = Music.new
-      music.title = m.css('.qt-item-content-s').css('h4').text
+    # binding.pry
+    Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').each do |m|
+      m.css('.qt-item-content-s').css('h4').each do |i|
+        title = i.text.chomp
+        link = 'https://achivmizik.net' + i.css('a').attribute('href').value.chomp
+        Music.new(title, link)
+      end
     end
   end
 
@@ -14,9 +18,10 @@ class Scraper
     grab_music
     Music.all.each do |m|
       puts m.title
+      puts m.link
     end
   end
 end
 
-v = Scraper.new
-v.display_all
+# v = Scraper.new
+# v.grab_music

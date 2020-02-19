@@ -7,3 +7,5 @@ class Main
   end
 end
 
+v = Main.new
+v.display_menu
