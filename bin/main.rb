@@ -1,5 +1,5 @@
 require_relative '../lib/helper.rb'
-require_relative '../lib/menu_helper.rb'
+require_relative '../lib/menu.rb'
 class Main
   include Menu
   def display_menu

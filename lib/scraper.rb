@@ -21,11 +21,7 @@ class Scraper
     end
   end
 
-  def single_music(music, index)
-    single = music.all[index]
-    puts single.tile
-    puts single.link
-  end
+
 end
 
 # v = Scraper.new
