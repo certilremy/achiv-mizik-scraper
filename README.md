@@ -4,6 +4,8 @@
 
 ## Use the App
 
+![](./achiv.gif)
+
  Clone this repo (you need ruby installed in your computer).
 ```
 $ git clone git@github.com:certilremy/achiv-mizik-scraper.git
