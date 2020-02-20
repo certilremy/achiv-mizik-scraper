@@ -1,6 +1,7 @@
 require_relative '../lib/helper.rb'
 require_relative '../lib/musics.rb'
 require_relative '../lib/scraper.rb'
+require 'colorize'
 class Menu
   include InputHelper
   def main_menu

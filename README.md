@@ -4,7 +4,7 @@
 
 ## Use the App
 
-### Clone this repo (you need ruby installed in your computer).
+ Clone this repo (you need ruby installed in your computer).
 ```
 $ git clone git@github.com:certilremy/achiv-mizik-scraper.git
 ```
@@ -31,3 +31,5 @@ Follow the instructions on the screen to enjoy Haitian and African music.
 ## Want to contribute? 
 Issues? Feel free to check the issues page. feature requests are welcome! Clone the repo make your change and open a pull request. 
  
+## Autors 
+Certil Remy, Find me on twitter @certilremy
