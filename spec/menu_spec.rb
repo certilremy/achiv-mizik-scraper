@@ -23,5 +23,4 @@ describe 'Menu' do
       expect(output).to include('- 3 Quit the app')
     end
   end
-
 end
