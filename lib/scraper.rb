@@ -45,7 +45,8 @@ class Scraper
     if Music.all.empty?
       puts 'This website contain Only Haitian music and some african music'
     else
-      Music.all.each_with_index do |m, index|
+      musics = Music.all.first(10)
+      musics.each_with_index do |m, index|
         puts "#{index + 1} : #{m.title} "
       end
       puts 'Please enter the music number to view the music detail'

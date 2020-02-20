@@ -37,13 +37,14 @@ class Menu
   def make_choice_after_all_music
     puts 'Type 20 to return to the main menu'
     input = gets.chomp
-    choice = input.to_i
-    until valide_choice(choice)
+    choice = input.to_i - 1
+    until valide_choice_music(choice)
+      puts 'Ivalid choice please try again'
       input = gets.chomp
-      choice = input.to_i
+      choice = input.to_i - 1
     end
 
-    if choice == 20
+    if choice == 19
       sub_menu
     else
       Music.single_music(choice)
