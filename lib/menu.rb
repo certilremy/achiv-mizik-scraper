@@ -5,7 +5,7 @@ require 'colorize'
 class Menu
   include InputHelper
   def main_menu
-    puts 'Welcome to Archive music cli'
+    puts 'Welcome to Archive music cli'.colorize(:blue)
     puts 'Please enter a number from 1 to 3 to make a choice'
     puts '- 1 Latest Musics'
     puts '- 2 Search for a music'
@@ -21,7 +21,7 @@ class Menu
     input = gets.chomp
     choice = input.to_i
     until valide_choice(choice)
-      puts 'Please enter a number from 1 to 3 to make a choice'
+      puts 'Please enter a number from 1 to 3 to make a choice'.colorize(:red)
       input = gets.chomp
       choice = input.to_i
     end
@@ -31,21 +31,21 @@ class Menu
     elsif choice == 2
       display_search_result
     else
-      puts 'Goodbye glad you enjoyed achivmizik'
+      puts 'Goodbye glad you enjoyed achivmizik'.colorize(:yellow)
     end
   end
 
   def make_choice_after_all_music
-    puts 'Type 20 to return to the main menu'
+    puts 'Type 12 to return to the main menu'.colorize(:blue)
     input = gets.chomp
     choice = input.to_i - 1
     until valide_choice_music(choice)
-      puts 'Ivalid choice please try again'
+      puts 'Ivalid choice please try again'.colorize(:red)
       input = gets.chomp
       choice = input.to_i - 1
     end
 
-    if choice == 19
+    if choice == 11
       puts 'Make a Choice'
       sub_menu
     else
@@ -62,13 +62,13 @@ class Menu
   end
 
   def all_music_menu
-    puts 'Here are the 10 latest musics'
+    puts 'Here are the 10 latest musics'.colorize(:yellow)
     scraper.display_all
     make_choice_after_all_music
   end
 
   def display_search_result
-    puts 'Enter a music to search'
+    puts 'Enter a music to search'.colorize(:blue)
     param = gets.chomp
     puts 'Search result for: ' + param
     scraper.search_result(param)

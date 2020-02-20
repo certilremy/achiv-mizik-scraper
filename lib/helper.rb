@@ -20,7 +20,7 @@ module InputHelper
 
     elsif input == ''
 
-    elsif !input.between?(0, 9)
+    elsif !input.between?(0, 11)
 
       false
 
