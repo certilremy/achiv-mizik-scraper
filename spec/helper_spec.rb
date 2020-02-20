@@ -41,6 +41,4 @@ describe 'InputHelper' do
       expect(valide_choice_music(input_4)).to be_falsey
     end
   end
-
-
 end
