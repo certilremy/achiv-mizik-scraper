@@ -98,3 +98,13 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+
+def capture_output
+  old_stdout = $stdout
+  $stdout = StringIO.new('', 'w')
+  yield
+  $stdout.string
+ensure
+  $stdout = old_stdout
+end

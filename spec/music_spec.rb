@@ -18,6 +18,7 @@ describe 'Music' do
       music.title = 'https://achvimizik.net'
       expect(music.title).to eq('https://achvimizik.net')
     end
+
   end
 
   context 'class methods' do
