@@ -45,6 +45,7 @@ class Menu
     end
 
     if choice == 19
+      puts 'Make a Choice'
       sub_menu
     else
       Music.single_music(choice)
@@ -60,7 +61,7 @@ class Menu
   end
 
   def all_music_menu
-    puts 'Here a the latest 10 music'
+    puts 'Here are the 10 latest musics'
     scraper.display_all
     make_choice_after_all_music
   end

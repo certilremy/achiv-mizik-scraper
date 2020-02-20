@@ -3,7 +3,6 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 class Scraper
-
   def grab_music
     Music.reset
     Nokogiri::HTML(open('https://achivmizik.net/musics/')).css('.qt-vertical-padding-l').each do |m|

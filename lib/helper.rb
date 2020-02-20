@@ -15,7 +15,6 @@ module InputHelper
   end
 
   def valide_choice_music(input)
-
     if input == ' '
       false
 

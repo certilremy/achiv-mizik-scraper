@@ -1,14 +1,10 @@
-require_relative './menu.rb'
 class Music
-
-  attr_accessor :title, :link, :category_name
-
+  attr_accessor :title, :link
   @@all = []
 
-  def initialize(title = nil, link = nil, category_name = nil)
+  def initialize(title = nil, link = nil)
     @title = title
     @link = link
-    @category_name = category_name
     @@all << self
   end
 
