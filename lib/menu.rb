@@ -1,7 +1,7 @@
 require_relative '../lib/helper.rb'
 require_relative '../lib/musics.rb'
 require_relative '../lib/scraper.rb'
-module Menu
+class Menu
   include InputHelper
   def main_menu
     puts 'Welcome to Archive music cli'
@@ -10,6 +10,10 @@ module Menu
     puts '- 2 Search for a music'
     puts '- 3 Quit the app'
     make_first_choice
+  end
+
+  def scraper
+    @scraper = Scraper.new
   end
 
   def make_first_choice
@@ -31,12 +35,10 @@ module Menu
   end
 
   def make_choice_after_all_music
-    puts 'Please enter the music number to view the music detail'
     puts 'Type 20 to return to the main menu'
     input = gets.chomp
     choice = input.to_i
     until valide_choice(choice)
-      puts 'Please enter the music number to view the music detail'
       input = gets.chomp
       choice = input.to_i
     end
@@ -50,7 +52,6 @@ module Menu
   end
 
   def sub_menu
-    puts 'Please enter the music number to view the music detail'
     puts '- 1 Display latest musics'
     puts '- 2 Search for a music'
     puts '- 3 Quit the app'
@@ -59,8 +60,7 @@ module Menu
 
   def all_music_menu
     puts 'Here a the latest 10 music'
-    puts 'Please enter the music number to view the music detail'
-    Scraper.new.display_all
+    scraper.display_all
     make_choice_after_all_music
   end
 
@@ -68,7 +68,7 @@ module Menu
     puts 'Enter a music to search'
     param = gets.chomp
     puts 'Search result for: ' + param
-    Scraper.new.search_result(param)
+    scraper.search_result(param)
     make_choice_after_all_music
   end
 end

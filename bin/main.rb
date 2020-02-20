@@ -1,9 +1,12 @@
 require_relative '../lib/helper.rb'
 require_relative '../lib/menu.rb'
 class Main
-  include Menu
+  def menu
+    @menu = Menu.new
+  end
+
   def display_menu
-    main_menu
+    menu.main_menu
   end
 end
 
