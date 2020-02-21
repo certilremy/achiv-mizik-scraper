@@ -1,5 +1,5 @@
 class Music
-  attr_accessor :title, :link
+  attr_reader :title, :link
   @@all = []
 
   def initialize(title = nil, link = nil)
