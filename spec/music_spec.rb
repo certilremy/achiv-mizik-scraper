@@ -11,12 +11,10 @@ describe 'Music' do
     end
 
     it 'Assingn  a  new title for the music' do
-      music.title = 'fantom'
-      expect(music.title).to eq('fantom')
+      expect(Music.new('fantom').title).to eq('fantom')
     end
     it 'Assingn  a  new link for the music' do
-      music.title = 'https://achvimizik.net'
-      expect(music.title).to eq('https://achvimizik.net')
+      expect(Music.new('fantom', 'https://achvimizik.net').link).to eq('https://achvimizik.net')
     end
   end
 

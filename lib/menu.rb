@@ -10,7 +10,6 @@ class Menu
     puts '- 1 Latest Musics'
     puts '- 2 Search for a music'
     puts '- 3 Quit the app'
-    make_first_choice
   end
 
   def scraper
@@ -49,9 +48,15 @@ class Menu
       puts 'Make a Choice'
       sub_menu
     else
-      Music.single_music(choice)
+      display_single(choice)
       sub_menu
     end
+  end
+
+  def display_single(choice)
+    music = Music.single(choice)
+    puts "Title:  #{music.title}"
+    puts "Web link:  #{music.link}"
   end
 
   def sub_menu
@@ -63,15 +68,37 @@ class Menu
 
   def all_music_menu
     puts 'Here are the 10 latest musics'.colorize(:yellow)
-    scraper.display_all
+    display_all
     make_choice_after_all_music
+  end
+
+  def display_all
+    scraper.grab_music
+    Music.all.each_with_index do |m, index|
+      puts "#{index + 1} : #{m.title} "
+    end
+    puts 'Please enter the music number to view the music detail'
   end
 
   def display_search_result
     puts 'Enter a music to search'.colorize(:blue)
     param = gets.chomp
     puts 'Search result for: ' + param
-    scraper.search_result(param)
+    search_result(param)
     make_choice_after_all_music
+  end
+
+  def search_result(param)
+    scraper.search(param)
+    if Music.all.empty?
+      puts 'No results found!'
+      puts 'This website contain Only Haitian music and some african music'
+    else
+      musics = Music.all.first(10)
+      musics.each_with_index do |m, index|
+        puts "#{index + 1} : #{m.title} "
+      end
+      puts 'Please enter the music number to view the music detail'
+    end
   end
 end

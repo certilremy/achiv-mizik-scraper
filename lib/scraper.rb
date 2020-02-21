@@ -18,7 +18,6 @@ class Scraper
     Music.reset
     data = Nokogiri::HTML(open('https://achivmizik.net/search?utf8=%E2%9C%93&q=' + param.to_s)).css('.qt-chart-tracklist')
     if data.text.lstrip.chop.match('No results found!')
-      puts 'No results found!'
 
     else
       data.each do |r|
@@ -28,27 +27,6 @@ class Scraper
           Music.new(title, link)
         end
       end
-    end
-  end
-
-  def display_all
-    grab_music
-    Music.all.each_with_index do |m, index|
-      puts "#{index + 1} : #{m.title} "
-    end
-    puts 'Please enter the music number to view the music detail'
-  end
-
-  def search_result(param)
-    search(param)
-    if Music.all.empty?
-      puts 'This website contain Only Haitian music and some african music'
-    else
-      musics = Music.all.first(10)
-      musics.each_with_index do |m, index|
-        puts "#{index + 1} : #{m.title} "
-      end
-      puts 'Please enter the music number to view the music detail'
     end
   end
 end
