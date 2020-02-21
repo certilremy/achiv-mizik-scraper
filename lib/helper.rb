@@ -1,5 +1,5 @@
 module InputHelper
-  def valide_choice(input)
+  def valide_choice?(input)
     if input == ' '
       false
 
@@ -14,7 +14,7 @@ module InputHelper
     end
   end
 
-  def valide_choice_music(input)
+  def valide_choice_music?(input)
     if input == ' '
       false
 

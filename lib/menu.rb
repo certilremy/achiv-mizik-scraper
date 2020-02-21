@@ -20,7 +20,7 @@ class Menu
   def make_first_choice
     input = gets.chomp
     choice = input.to_i
-    until valide_choice(choice)
+    until valide_choice?(choice)
       puts 'Please enter a number from 1 to 3 to make a choice'.colorize(:red)
       input = gets.chomp
       choice = input.to_i
@@ -39,7 +39,7 @@ class Menu
     puts 'Type 12 to return to the main menu'.colorize(:blue)
     input = gets.chomp
     choice = input.to_i - 1
-    until valide_choice_music(choice)
+    until valide_choice_music?(choice)
       puts 'Ivalid choice please try again'.colorize(:red)
       input = gets.chomp
       choice = input.to_i - 1
