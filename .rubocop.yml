@@ -3,11 +3,12 @@ AllCops:
     - "README.md"
     - "Guardfile"
     - "Rakefile"
+    
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 130
 Metrics/MethodLength:
   Max: 20
 Metrics/AbcSize:
@@ -31,6 +32,10 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/ClassVars:
+  Enabled: false
+Style/IdenticalConditionalBranches:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
